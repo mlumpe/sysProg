@@ -1,5 +1,5 @@
 module Mod_foliate ( foliate ) where
-import Prelude hiding (and, or)
+import Prelude hiding (and, or) 
 import Debug.Trace
 import Splib
 import Types
@@ -7,14 +7,14 @@ import Types
 foliate_h k i = (k + i)
 
 trace' :: String -> a -> a
-trace' str x = (trace str x) 
+--trace' str x = (trace str x) 
 trace' str x = x
 
-data Data_foliate  = Data_foliate  {
+data Data_foliate  = Data_foliate  { 
   inp :: ListInt,
   cur :: Int,
   lastMax :: Int,
-  res :: List2Int
+  res :: List2Int 
 }
 
 --SIGNATURES
@@ -27,7 +27,7 @@ p_empty :: Data_foliate -> Bool
 --DEFINITIONS
 foliate inp = (o_init (Data_foliate inp undefined undefined undefined))
 
-p_empty (Data_foliate inp cur lastMax res) =
+p_empty (Data_foliate inp cur lastMax res) = 
   (empty inp)
 
 o_init (Data_foliate inp cur lastMax res) = (trace' "o_init" flow)
@@ -37,7 +37,7 @@ o_init (Data_foliate inp cur lastMax res) = (trace' "o_init" flow)
     inp' = inp
     cur' = cur
     data' = (Data_foliate inp' cur' lastMax' res')
-    flow =
+    flow = 
       (if' (p_empty data')
         (o_end data')
         (o_next data')
@@ -50,7 +50,7 @@ o_next (Data_foliate inp cur lastMax res) = (trace' "o_next" flow)
     res' = (append res (map (foliate_h lastMax) (firstNNumbers cur')))
     lastMax' = (reduce sp_max (last res'))
     data' = (Data_foliate inp' cur' lastMax' res')
-    flow =
+    flow = 
       (if' (p_empty data')
         (o_end data')
         (o_next data')
@@ -63,5 +63,5 @@ o_end (Data_foliate inp cur lastMax res) = (trace' "o_end" flow)
     lastMax' = lastMax
     res' = res
     data' = (Data_foliate inp' cur' lastMax' res')
-    flow =
+    flow = 
       res'

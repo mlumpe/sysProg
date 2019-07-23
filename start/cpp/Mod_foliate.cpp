@@ -105,7 +105,7 @@ class foliate_class {
 
 List2Int foliate(ListInt inp) {
     foliate_class obj(inp);  
-    return obj.execute(true);
+    return obj.execute(false);
 }
 
 
@@ -113,31 +113,3 @@ List2Int foliate_debug(ListInt inp) {
     foliate_class obj(inp);  
     return obj.execute(true);
 }
-
-/*
- Aufgabe 1
-    1.) Die Funktion berechnet für jeden Werte der List eine  Subliste mit dem jeweiligen Wert als Länge. Der Inhalt sind natürliche Zahlen, die inkrementiert werden für die gesamte Liste.
- 
-        Beispiel: [4,1,2,3]
- 
-        1   5   6   8
-        2       7   9
-        3           10
-        4
-    2.) - grundlegende Funktionen
-        - Variablennamen
-    3.) - Signaturen (z.B. o_init)
-        - Data_foliate wurde in Haskell erstellt
-        - Implementierung der Kontrollstruktur (Schleifen, Bedingungen)
-        - C++ lokale Variablen; Haskell nur Parameter
-        - Debug
-    4.) C++
-        - Zeigt Schritt für Schritt die Funktionen und Parameter (Trace)
-            - Es wird inp, cur, lastMax und res ausgegeben
-                - inp ... Eingabe
-                - cur ... Aktueller Parameter der Eingabe
-                - lastMax ... Zählervariable
-                - res ... Ausgabe
-        Haskell
-        - Zeigt Schritt für Schritt nur die aufgerufenen Funktionen
- */

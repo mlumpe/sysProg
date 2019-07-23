@@ -30,7 +30,6 @@ bool csmAlg(CSMInstance x){
 			la = lena(x, ia);
 			acta = 0;
 		}
-        
 		if(actb == lb){
 			ib++;
 			lb = lenb(x, ib);
