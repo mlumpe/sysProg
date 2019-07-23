@@ -15,6 +15,7 @@
 #include "Mod_factorial.cpp"
 #include "Mod_fibonacci.cpp"
 #include "Mod_Prime.cpp"
+//#include "Mod_firstChild.cpp"
 
 
 /*int f1(int n) {return 2*n-1;}
@@ -22,6 +23,55 @@ int f2(int n) {return 2 << (n-1);}
 Char f3(int n) {return 'z';}*/
 
 int main() {
+    /* Tree t1 */
+    Tree t1 = newTree();
+    Node v11 = root(t1);
+
+    /* Tree t2 */
+    Tree t2 = newTree();
+    Node v21 = root(t2);
+    t2 = addLeaf(t2, v21);
+    t2 = addLeaf(t2, v21);
+    Node v22 = get(children(t2, v21), 0);
+    Node v23 = get(children(t2, v21), 1);
+    t2 = addLeaf(t2, v22);
+    t2 = addLeaf(t2, v22);
+    Node v24 = get(children(t2, v21), 0);
+    Node v25 = get(children(t2, v21), 1);
+    t2 = addLeaf(t2, v25);
+    t2 = addLeaf(t2, v25);
+    t2 = addLeaf(t2, v25);
+    Node v26 = get(children(t2, v21), 0);
+    Node v27 = get(children(t2, v21), 1);
+    Node v28 = get(children(t2, v21), 2);
+    t2 = addLeaf(t2, v23);
+    Node v29 = get(children(t2, v23), 0);
+
+    /* Tree t3*/
+    Node v35 = createNode(5);
+    Node v36 = createNode(6);
+    Node v37 = createNode(7);
+    Node v38 = createNode(8);
+    Tree t3 = newTreeOwn(v35);
+    t3 = addOwnLeaf(t3, v35, v36);
+    t3 = addOwnLeaf(t3, v35, v37);
+    t3 = addOwnLeaf(t3, v35, v38);
+
+    /* Tree t4 */
+    Tree t4 = newTree();
+    Node v41 = root(t4);
+    t4 = addLeaf(t4, v41);
+    t4 = addLeaf(t4, v41);
+    Node v42 = get(children(t4, v41), 0);
+    Node v43 = get(children(t4, v41), 1);
+    t4 = addLeaf(t4, v42);
+    t4 = get(children(t4, v42), 0);
+    Node v49 = createNode(9);
+    t4 = addOwnLeaf(t4, v43, v49);
+
+    /* Tree t5 */
+    
+
     /*List<Int> l = {1,1,6,3,1,3};
     List<Char> k = {'a','b','a','b','c','a','b'};
     List<Int> j = {};
@@ -152,6 +202,11 @@ int main() {
     cout << nthPrime(3) << endl;
     cout << "nthPrime(10)" << endl;
     cout << nthPrime(10) << endl;
+
+    /*cout << endl;
+    cout << "firstChild(Tree, Node)" << endl;
+    cout << "firstChild(t2, v6)" << endl;
+    cout << firstChild(t2, v6) << endl;*/
 
     return 0;
 }
