@@ -1,21 +1,21 @@
 module Mod_addKAry ( addKAry ) where
-import Prelude hiding (and, or) 
+import Prelude hiding (and, or)
 import Debug.Trace
 import Splib
 import Types
 
 
 trace' :: String -> a -> a
-trace' str x = (trace str x) 
---trace' str x = x
+--trace' str x = (trace str x)
+trace' str x = x
 
-data Data_addKAry  = Data_addKAry  { 
+data Data_addKAry  = Data_addKAry  {
   base :: Int,
   list1 :: ListInt,
   list2 :: ListInt,
   carry :: Int,
   sum :: Int,
-  res :: ListInt 
+  res :: ListInt
 }
 
 --SIGNATURES
@@ -39,15 +39,15 @@ carry_set :: Data_addKAry -> Bool
 --DEFINITIONS
 addKAry base list1 list2 = (o_init (Data_addKAry base list1 list2 undefined undefined undefined))
 
-l1_empty (Data_addKAry base list1 list2 carry sum res) = 
+l1_empty (Data_addKAry base list1 list2 carry sum res) =
   (empty list1)
-l2_empty (Data_addKAry base list1 list2 carry sum res) = 
+l2_empty (Data_addKAry base list1 list2 carry sum res) =
   (empty list2)
-or_empty (Data_addKAry base list1 list2 carry sum res) = 
+or_empty (Data_addKAry base list1 list2 carry sum res) =
   (sp_or (empty list1) (empty list2))
-and_empty (Data_addKAry base list1 list2 carry sum res) = 
+and_empty (Data_addKAry base list1 list2 carry sum res) =
   (sp_and (empty list1) (empty list2))
-carry_set (Data_addKAry base list1 list2 carry sum res) = 
+carry_set (Data_addKAry base list1 list2 carry sum res) =
   (sp_eq carry 1)
 
 o_init (Data_addKAry base list1 list2 carry sum res) = (trace' "o_init" flow)
@@ -59,7 +59,7 @@ o_init (Data_addKAry base list1 list2 carry sum res) = (trace' "o_init" flow)
     list2' = list2
     sum' = sum
     data' = (Data_addKAry base' list1' list2' carry' sum' res')
-    flow = 
+    flow =
       (if' (and_empty data')
         (o_end data')
         (o_calc data')
@@ -74,7 +74,7 @@ o_next (Data_addKAry base list1 list2 carry sum res) = (trace' "o_next" flow)
     base' = base
     sum' = sum
     data' = (Data_addKAry base' list1' list2' carry' sum' res')
-    flow = 
+    flow =
       (o_calc data')
 
 o_l1add (Data_addKAry base list1 list2 carry sum res) = (trace' "o_l1add" flow)
@@ -86,7 +86,7 @@ o_l1add (Data_addKAry base list1 list2 carry sum res) = (trace' "o_l1add" flow)
     list2' = list2
     sum' = sum
     data' = (Data_addKAry base' list1' list2' carry' sum' res')
-    flow = 
+    flow =
       (if' (l1_empty data')
         (o_carry data')
         (o_calc data')
@@ -101,7 +101,7 @@ o_l2add (Data_addKAry base list1 list2 carry sum res) = (trace' "o_l2add" flow)
     list1' = list1
     sum' = sum
     data' = (Data_addKAry base' list1' list2' carry' sum' res')
-    flow = 
+    flow =
       (if' (l2_empty data')
         (o_carry data')
         (o_calc data')
@@ -116,7 +116,7 @@ o_carry (Data_addKAry base list1 list2 carry sum res) = (trace' "o_carry" flow)
     carry' = carry
     sum' = sum
     data' = (Data_addKAry base' list1' list2' carry' sum' res')
-    flow = 
+    flow =
       (o_end data')
 
 o_end (Data_addKAry base list1 list2 carry sum res) = (trace' "o_end" flow)
@@ -128,7 +128,7 @@ o_end (Data_addKAry base list1 list2 carry sum res) = (trace' "o_end" flow)
     sum' = sum
     res' = res
     data' = (Data_addKAry base' list1' list2' carry' sum' res')
-    flow = 
+    flow =
       res'
 
 o_calc (Data_addKAry base list1 list2 carry sum res) = (trace' "o_calc" flow)
@@ -140,7 +140,7 @@ o_calc (Data_addKAry base list1 list2 carry sum res) = (trace' "o_calc" flow)
     sum' = sum
     res' = res
     data' = (Data_addKAry base' list1' list2' carry' sum' res')
-    flow = 
+    flow =
       (if' (and_empty data')
         (o_carry data')
         (if' (or_empty data')
@@ -161,7 +161,7 @@ o_calc_both (Data_addKAry base list1 list2 carry sum res) = (trace' "o_calc_both
     carry' = carry
     res' = res
     data' = (Data_addKAry base' list1' list2' carry' sum' res')
-    flow = 
+    flow =
       (o_next data')
 
 o_calc_l1 (Data_addKAry base list1 list2 carry sum res) = (trace' "o_calc_l1" flow)
@@ -173,7 +173,7 @@ o_calc_l1 (Data_addKAry base list1 list2 carry sum res) = (trace' "o_calc_l1" fl
     carry' = carry
     res' = res
     data' = (Data_addKAry base' list1' list2' carry' sum' res')
-    flow = 
+    flow =
       (o_l1add data')
 
 o_calc_l2 (Data_addKAry base list1 list2 carry sum res) = (trace' "o_calc_l2" flow)
@@ -185,5 +185,5 @@ o_calc_l2 (Data_addKAry base list1 list2 carry sum res) = (trace' "o_calc_l2" fl
     carry' = carry
     res' = res
     data' = (Data_addKAry base' list1' list2' carry' sum' res')
-    flow = 
+    flow =
       (o_l2add data')

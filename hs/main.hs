@@ -22,7 +22,7 @@ t1 = newTree
 v11 = root t1
 
 --Tree t2
-t2 = newTree
+{-t2 = newTree
 v21 = root t2
 t2 = addLeaf t2 v21
 t2 = addLeaf t2 v21
@@ -39,7 +39,7 @@ v26 = get (children t2 v25) 0
 v27 = get (children t2 v25) 1
 v28 = get (children t2 v25) 2
 t2 = addLeaf t2 v23
-v29 = get (children t2 v23) 0
+v29 = get (children t2 v23) 0-}
 
 main = do putStrLn ("*** Tests ***")
           putStrLn ("absolute -3: ")
