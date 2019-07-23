@@ -3,16 +3,9 @@
 
 //Einbinden der selbst geschriebenen Programme
 
-#include "Mod_absolute.cpp"
-#include "Mod_factorial.cpp"
-#include "Mod_fibonacci.cpp"
-#include "Mod_isPrime.cpp"
-#include "Mod_nthPrime.cpp"
-#include "Mod_toBinary.cpp"
-#include "Mod_fromBinary.cpp"
-#include "Mod_addBinary.cpp"
-#include "Mod_multBinary.cpp"
-#include "Mod_addKAry.cpp"
+#include "Mod_subtree.cpp"
+#include "Mod_multiplyList.cpp"
+#include "Mod_treeToString.cpp"
 
 
 int main() {  
@@ -29,8 +22,8 @@ int main() {
     Node v23 = get(children(t2, v21), 1);
     t2 = addLeaf(t2, v22);
     t2 = addLeaf(t2, v22);
-    Node v24 = get(children(t2, v21), 0);
-    Node v25 = get(children(t2, v21), 1);
+    Node v24 = get(children(t2, v22), 0);
+    Node v25 = get(children(t2, v22), 1);
     t2 = addLeaf(t2, v25);
     t2 = addLeaf(t2, v25);
     t2 = addLeaf(t2, v25);
@@ -88,128 +81,25 @@ int main() {
     t6 = addOwnLeaf(t6, v64, v618);
     t6 = addOwnLeaf(t6, v64, v67);
     t6 = addOwnLeaf(t6, v64, v63);
+    t6 = addOwnLeaf(t6, v69, v65);
 
 
 
     //Code zum Testen    
     cout << "*** Tests ***" << endl;
-	cout << "absolute(int)" << endl;
-    cout << "absolute(-3)" << endl;
-    cout << absolute(-3) << endl;
-    cout << "absolute(2)" << endl;
-    cout << absolute(2) << endl;
-    cout << "absolute(0)" << endl;
-    cout << absolute(0) << endl;
+	cout << "treeToString(t1)" << endl;
+	cout << treeToString(t1) << endl;
+	cout << "treeToString(t2)" << endl;
+	cout << treeToString(t2) << endl;
+	cout << "treeToString(t3)" << endl;
+	cout << treeToString(t3) << endl;
+	cout << "treeToString(t4)" << endl;
+	cout << treeToString(t4) << endl;
+	cout << "treeToString(t5)" << endl;
+	cout << treeToString(t5) << endl;
+	cout << "treeToString(t6)" << endl;
+	cout << treeToString(t6) << endl;
     
-    cout << endl;
-    cout << "factorial(int)" << endl;
-    cout << "factorial(0)" << endl;
-    cout << factorial(0) << endl;
-    cout << "factorial(1)" << endl;
-    cout << factorial(1) << endl;
-    cout << "factorial(4)" << endl;
-    cout << factorial(4) << endl;
-    cout << "factorial(5)" << endl;
-    cout << factorial(5) << endl;
-    
-    cout << endl;
-    cout << "fibonacci(int)" << endl;
-    cout << "fibonacci(0)" << endl;
-    cout << fibonacci(0) << endl;
-    cout << "fibonacci(1)" << endl;
-    cout << fibonacci(1) << endl;
-    cout << "fibonacci(2)" << endl;
-    cout << fibonacci(2) << endl;
-    cout << "fibonacci(3)" << endl;
-    cout << fibonacci(3) << endl;
-    cout << "fibonacci(6)" << endl;
-    cout << fibonacci(6) << endl;
-    
-    cout << endl;
-    cout << "isPrime(int)" << endl;
-    cout << "isPrime(0)" << endl;
-    cout << isPrime(0) << endl;
-    cout << "isPrime(1)" << endl;
-    cout << isPrime(1) << endl;
-    cout << "isPrime(2)" << endl;
-    cout << isPrime(2) << endl;
-    cout << "isPrime(3)" << endl;
-    cout << isPrime(3) << endl;
-    cout << "isPrime(4)" << endl;
-    cout << isPrime(4) << endl;
-    cout << "isPrime(17)" << endl;
-    cout << isPrime(17) << endl;
-
-    cout << endl;
-    cout << "nthPrime(int)" << endl;
-    cout << "nthPrime(1)" << endl;
-    cout << nthPrime(1) << endl;
-    cout << "nthPrime(2)" << endl;
-    cout << nthPrime(2) << endl;
-    cout << "nthPrime(3)" << endl;
-    cout << nthPrime(3) << endl;
-    cout << "nthPrime(10)" << endl;
-    cout << nthPrime(10) << endl;
-
-    cout << "addBinary({0},{0})" << endl;
-    cout << addBinary({0},{0}) << endl;
-    cout << "addBinary({1},{1})" << endl;
-    cout << addBinary({1},{1}) << endl;
-    cout << "addBinary({1,0,0,1},{1,1,0})" << endl;
-    cout << addBinary({1,0,0,1},{1,1,0}) << endl;
-    cout << "addBinary({1,1,1},{1,1,1})" << endl;
-    cout << addBinary({1,1,1},{1,1,1}) << endl;
-    cout << "addBinary({1,1,1},{1,0,1,1})" << endl;
-    cout << addBinary({1,1,1},{1,0,1,1}) << endl;
-    cout << "addBinary({1,0,1,1},{1,1,1})" << endl;
-    cout << addBinary({1,0,1,1},{1,1,1}) << endl;
-    cout << "addBinary({1,0,0},{1,1})" << endl;
-    cout << addBinary({1,0,0},{1,1}) << endl;
-    cout << "addBinary({1,0,1,1},{1,1,1,0})" << endl;
-    cout << addBinary({1,0,1,1},{1,1,1,0}) << endl;
-    cout << "" << endl;
-    cout << "multBinary({0},{0})" << endl;
-    cout << multBinary({0},{0}) << endl;
-    cout << "multBinary({1},{1})" << endl;
-    cout << multBinary({1},{1}) << endl;
-    cout << "multBinary({1,0,1,1},{1,1,1,0})" << endl;
-    cout << multBinary({1,0,1,1},{1,1,1,0}) << endl;
-    cout << "" << endl;
-    cout << "toBinary(0)" << endl;
-    cout << toBinary(0) << endl;
-    cout << "toBinary(1)" << endl;
-    cout << toBinary(1) << endl;
-    cout << "toBinary(2)" << endl;
-    cout << toBinary(2) << endl;
-    cout << "toBinary(3)" << endl;
-    cout << toBinary(3) << endl;
-    cout << "toBinary(4)" << endl;
-    cout << toBinary(4) << endl;
-    cout << "toBinary(20)" << endl;
-    cout << toBinary(20) << endl;
-    cout << "";
-    cout << "fromBinary({0})" << endl;
-    cout << fromBinary({0}) << endl;
-    cout << "fromBinary({1})" << endl;
-    cout << fromBinary({1}) << endl;
-    cout << "fromBinary({1,0})" << endl;
-    cout << fromBinary({1,0}) << endl;
-    cout << "fromBinary({1,1})" << endl;
-    cout << fromBinary({1,1}) << endl;
-    cout << "fromBinary({1,0,0})" << endl;
-    cout << fromBinary({1,0,0}) << endl;
-    cout << "fromBinary({1,0,1,0,0})" << endl;
-    cout << fromBinary({1,0,1,0,0}) << endl;
-    cout << "addKAry(10,{1,2,3},{9,7})" << endl;
-    cout << addKAry(10,{1,2,3},{9,7}) << endl;
-    cout << "addKAry(16,{15,1,3},{9,4,12,0})" << endl;
-    cout << addKAry(16,{15,1,3},{9,4,12,0}) << endl;
-    cout << "addKAry(2,{0},{0})" << endl;
-    cout << addKAry(2,{0},{0}) << endl;
-    cout << "addKAry(2,{1},{1})" << endl;
-    cout << addKAry(2,{1},{1}) << endl;
-    cout << "addKAry(2,{1,1,1},{1,0,1,1})" << endl;
-    cout << addKAry(2,{1,1,1},{1,0,1,1}) << endl;
     
     return 0;
 }

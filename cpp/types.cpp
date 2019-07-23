@@ -10,6 +10,7 @@
 using ListInt = List<Int>;            
 using List2Int = List<List<Int>>;            
 using ListString = List<String>;
+using ListNode = List<Node>;
 
 
 ListInt firstNNumbers(Int n) {

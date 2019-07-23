@@ -7,6 +7,11 @@ import Types
 import Mod_nextSibling
 import Mod_subtree
 import Mod_treeToString
+import Mod_hasNextSibling
+import Mod_allNodes
+import Mod_depth
+import Mod_removeSubtree
+import Mod_isomorphism
 
 
 --Code zum Testen der geschriebenen Funktionen
@@ -66,6 +71,38 @@ main = do putStrLn ("*** Tests ***")
           putStrLn (show (nextSibling t2 (createNode 7)))
           putStrLn ("nextSibling t2 v4")
           putStrLn (show (nextSibling t2 (createNode 4)))
+          putStrLn ("hasNextSibling t2 v1")
+          putStrLn (show (hasNextSibling t2 (createNode 1)))
+          putStrLn ("hasNextSibling t2 v2")
+          putStrLn (show (hasNextSibling t2 (createNode 2)))
+          putStrLn ("hasNextSibling t2 v3")
+          putStrLn (show (hasNextSibling t2 (createNode 3)))
+          putStrLn ("hasNextSibling t2 v7")
+          putStrLn (show (hasNextSibling t2 (createNode 7)))
+          putStrLn ("hasNextSibling t2 v8")
+          putStrLn (show (hasNextSibling t2 (createNode 8)))
+          putStrLn ("allNodes t1")
+          putStrLn (show (allNodes t1))
+          putStrLn ("allNodes t2")
+          putStrLn (show (allNodes t2))
+          putStrLn ("allNodes t3")
+          putStrLn (show (allNodes t3))
+          putStrLn ("depth t1")
+          putStrLn (show (depth t1))
+          putStrLn ("depth t2")
+          putStrLn (show (depth t2))
+          putStrLn ("depth t3")
+          putStrLn (show (depth t3))
+          putStrLn ("depth t4")
+          putStrLn (show (depth t4))
+          putStrLn ("depth t5")
+          putStrLn (show (depth t5))
+          putStrLn ("depth t6")
+          putStrLn (show (depth t6))
+          putStrLn ("removeSubtree t2, v5")
+          putStrLn (treeToString (removeSubtree t2 (createNode 5)))
+          putStrLn ("removeSubtree t2, v2")
+          putStrLn (treeToString (removeSubtree t2 (createNode 2)))
           putStrLn ("treeToString t1")
           putStrLn (treeToString t1)
           putStrLn ("treeToString t2")
@@ -78,4 +115,7 @@ main = do putStrLn ("*** Tests ***")
           putStrLn (treeToString t5)
           putStrLn ("treeToString t6")
           putStrLn (treeToString t6)
-          
+          putStrLn ("isomorphism t1 t2")
+          putStrLn (show (isomorphism t1 t2))
+          putStrLn ("isomorphism t2 t6")
+          putStrLn (show (isomorphism t2 t2))

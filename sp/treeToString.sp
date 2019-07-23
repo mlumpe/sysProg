@@ -4,8 +4,8 @@ treeToString
 #VARS 
 tree    : Tree : i //i = Input-Variable
 toVisit : ListNode
+toVisitd: ListInt
 act     : Node
-index   : Int
 d       : Int
 res     : String : o //o = Output-Variable 
 
@@ -15,33 +15,35 @@ res     : String : o //o = Output-Variable
 #HS
 
 #PREDS
-leaf = (isLeaf act)
+leaf = (isLeaf tree act)
 last = (empty toVisit)
 
 #OPS
 o_init: 
   act = (root tree)
   d = 0
-  toVisit = (children tree (root tree))
   
 o_out:
-  res = (append res act)
+  res = (lc2s (join (s2lc res) (join (multiplyList [' '] (* d 3)) (s2lc (show act)))))
   
-o_down:
-  act = (first (children tree act))
+o_addChilds:
   toVisit = (join (children tree act) toVisit)
+  toVisitd = (join (multiplyList [(+ d 1)] (length (children tree act))) toVisitd)
   
 o_next:
   toVisit = (removeFirst toVisit)
-  act = (get toVisit 1)
-  
+  toVisitd = (removeFirst toVisitd)
+  d = (first toVisitd)
+  act = (first toVisit)
+
+o_end:
 
  
 #FLOW
 o_init = o_out
-o_out = (leaf o_next o_down)
-o_down = o_out
-o_next = (last o_end o_out)
+o_out = (leaf (last o_end o_next) o_addChilds)
+o_addChilds = o_next
+o_next = o_out
 o_end = RETURN
 
 
