@@ -8,6 +8,7 @@ import Mod_toBinary
 import Mod_fromBinary
 import Mod_addBinary
 import Mod_multBinary
+import Mod_addKAry
 
 
 --Code zum Testen der geschriebenen Funktionen 
@@ -51,4 +52,8 @@ main = do putStrLn ("*** Tests ***")
           putStrLn "fromBinary [1,0,0]" 
           putStrLn (show (fromBinary [1,0,0] ))
           putStrLn "fromBinary [1,0,1,0,0]" 
-          putStrLn (show (fromBinary [1,0,1,0,0]) )          
+          putStrLn (show (fromBinary [1,0,1,0,0]) )  
+          putStrLn "addKAry 10 [1,2,3] [9,7]"
+          putStrLn (show (addKAry 10 [1,2,3] [9,7]))
+          putStrLn "addKAry 16 [15,1,3] [9,4,12,0]"
+          putStrLn (show (addKAry 16 [15,1,3] [9,4,12,0]))

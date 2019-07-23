@@ -6,6 +6,7 @@
 #include "Mod_fromBinary.cpp"
 #include "Mod_addBinary.cpp"
 #include "Mod_multBinary.cpp"
+#include "Mod_addKAry.cpp"
 
 
 int main() {  
@@ -51,6 +52,10 @@ int main() {
     cout << fromBinary({1,0,0}) << endl;
     cout << "fromBinary({1,0,1,0,0})" << endl;
     cout << fromBinary({1,0,1,0,0}) << endl;
+    cout << "addKAry(10,{1,2,3},{9,7})" << endl;
+    cout << addKAry(10,{1,2,3},{9,7}) << endl;
+    cout << "addKAry(16,{15,1,3},{9,4,12,0})" << endl;
+    cout << addKAry(16,{15,1,3},{9,4,12,0}) << endl;
     
     return 0;
 }
