@@ -127,6 +127,16 @@ int main() {
 
     cout << "addBinary({0},{0})" << endl;
     cout << addBinary({0},{0}) << endl;
+    cout << "addBinary({1},{1})" << endl;
+    cout << addBinary({1},{1}) << endl;
+    cout << "addBinary({1,0,0,1},{1,1,0})" << endl;
+    cout << addBinary({1,0,0,1},{1,1,0}) << endl;
+    cout << "addBinary({1,1,1},{1,1,1})" << endl;
+    cout << addBinary({1,1,1},{1,1,1}) << endl;
+    cout << "addBinary({1,1,1},{1,0,1,1})" << endl;
+    cout << addBinary({1,1,1},{1,0,1,1}) << endl;
+    cout << "addBinary({1,0,1,1},{1,1,1})" << endl;
+    cout << addBinary({1,0,1,1},{1,1,1}) << endl;
     cout << "addBinary({1,0,0},{1,1})" << endl;
     cout << addBinary({1,0,0},{1,1}) << endl;
     cout << "addBinary({1,0,1,1},{1,1,1,0})" << endl;
@@ -168,6 +178,12 @@ int main() {
     cout << addKAry(10,{1,2,3},{9,7}) << endl;
     cout << "addKAry(16,{15,1,3},{9,4,12,0})" << endl;
     cout << addKAry(16,{15,1,3},{9,4,12,0}) << endl;
+    cout << "addKAry(2,{0},{0})" << endl;
+    cout << addKAry(2,{0},{0}) << endl;
+    cout << "addKAry(2,{1},{1})" << endl;
+    cout << addKAry(2,{1},{1}) << endl;
+    cout << "addKAry(2,{1,1,1},{1,0,1,1})" << endl;
+    cout << addKAry(2,{1,1,1},{1,0,1,1}) << endl;
     
     return 0;
 }

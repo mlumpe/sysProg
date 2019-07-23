@@ -65,6 +65,16 @@ main = do putStrLn ("*** Tests ***")
           putStrLn (show ( nthPrime 10))
           putStrLn "addBinary [0],[0]" 
           putStrLn (show (addBinary [0] [0]) )
+          putStrLn "addBinary [1],[1]" 
+          putStrLn (show (addBinary [1] [1]) )
+          putStrLn "addBinary [1,0,0,1],[1,1,0]" 
+          putStrLn (show (addBinary [1,0,0,1] [1,1,0]) )
+          putStrLn "addBinary [1,1,1],[1,1,1]" 
+          putStrLn (show (addBinary [1,1,1] [1,1,1]) )
+          putStrLn "addBinary [1,1,1],[1,0,1,1]" 
+          putStrLn (show (addBinary [1,1,1] [1,0,1,1]) )
+          putStrLn "addBinary [1,0,1,1],[1,1,1]" 
+          putStrLn (show (addBinary [1,0,1,1] [1,1,1]) )
           putStrLn "addBinary [1,0,0],[1,1]" 
           putStrLn (show (addBinary [1,0,0] [1,1]) )
           putStrLn "addBinary [1,0,1,1],[1,1,1,0]" 
@@ -106,3 +116,11 @@ main = do putStrLn ("*** Tests ***")
           putStrLn (show (addKAry 10 [1,2,3] [9,7]))
           putStrLn "addKAry 16 [15,1,3] [9,4,12,0]"
           putStrLn (show (addKAry 16 [15,1,3] [9,4,12,0]))
+          putStrLn (show (addKAry 2 [0] [0]))
+          putStrLn (show (addKAry 2 [1] [1]))
+          putStrLn (show (addKAry 2 [1,0,0,1] [1,1,0]))
+          putStrLn (show (addKAry 2 [1,1,1] [1,1,1]))
+          putStrLn (show (addKAry 2 [1,1,1] [1,0,1,1]))
+          putStrLn (show (addKAry 2 [1,0,1,1] [1,1,1]))
+          putStrLn (show (addKAry 10 [1,2,3,4,5,6,7,8,9,0] [4,3,2,0,9,9,9]))
+          putStrLn (show (addKAry 16 [15,10,3,15,2,0] [2,15,14,0,1]))

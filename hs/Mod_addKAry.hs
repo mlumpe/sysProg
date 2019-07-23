@@ -80,42 +80,36 @@ o_next (Data_addKAry base list1 list2 carry sum res) = (trace' "o_next" flow)
 o_l1add (Data_addKAry base list1 list2 carry sum res) = (trace' "o_l1add" flow)
   where
     carry' = (sp_div sum base)
-    sum' = (sp_mod sum base)
-    res' = (prepend res sum)
+    res' = (prepend res (sp_mod sum base))
     list1' = (removeLast list1)
     base' = base
     list2' = list2
+    sum' = sum
     data' = (Data_addKAry base' list1' list2' carry' sum' res')
     flow = 
       (if' (l1_empty data')
-        (if' (carry_set data')
-          (o_carry data')
-          (o_end data')
-        )
+        (o_carry data')
         (o_calc data')
       )
 
 o_l2add (Data_addKAry base list1 list2 carry sum res) = (trace' "o_l2add" flow)
   where
     carry' = (sp_div sum base)
-    sum' = (sp_mod sum base)
-    res' = (prepend res sum)
+    res' = (prepend res (sp_mod sum base))
     list2' = (removeLast list2)
     base' = base
     list1' = list1
+    sum' = sum
     data' = (Data_addKAry base' list1' list2' carry' sum' res')
     flow = 
       (if' (l2_empty data')
-        (if' (carry_set data')
-          (o_carry data')
-          (o_end data')
-        )
+        (o_carry data')
         (o_calc data')
       )
 
 o_carry (Data_addKAry base list1 list2 carry sum res) = (trace' "o_carry" flow)
   where
-    res' = (prepend res 1)
+    res' = (sp_if (sp_eq carry 1) (prepend res carry) res)
     base' = base
     list1' = list1
     list2' = list2
@@ -147,12 +141,15 @@ o_calc (Data_addKAry base list1 list2 carry sum res) = (trace' "o_calc" flow)
     res' = res
     data' = (Data_addKAry base' list1' list2' carry' sum' res')
     flow = 
-      (if' (or_empty data')
-        (if' (l1_empty data')
-          (o_calc_l2 data')
-          (o_calc_l1 data')
+      (if' (and_empty data')
+        (o_carry data')
+        (if' (or_empty data')
+          (if' (l1_empty data')
+            (o_calc_l2 data')
+            (o_calc_l1 data')
+          )
+          (o_calc_both data')
         )
-        (o_calc_both data')
       )
 
 o_calc_both (Data_addKAry base list1 list2 carry sum res) = (trace' "o_calc_both" flow)

@@ -85,27 +85,21 @@ class addKAry_class {
 
     void o_l1add() {                    
         carry_spnew = sp_div(sum, base);
-        sum_spnew = sp_mod(sum, base);
-        res_spnew = prepend(res, sum);
+        res_spnew = prepend(res, sp_mod(sum, base));
         list1_spnew = removeLast(list1);
         
         carry = carry_spnew;
-        sum = sum_spnew;
         res = res_spnew;
         list1 = list1_spnew;       
 
         if(debug_spv) {
             cout << "o_l1add" << " ; "  
-             << "" << ";"  << list1 << ";"  << "" << ";"  << carry << ";"  << sum << ";"  << res  
+             << "" << ";"  << list1 << ";"  << "" << ";"  << carry << ";"  << "" << ";"  << res  
             << endl;   
         }
 
         if(l1_empty()) {
-            if(carry_set()) {
-                o_carry();
-            } else {
-                o_end();
-            }
+            o_carry();
         } else {
             o_calc();
         }
@@ -113,34 +107,28 @@ class addKAry_class {
 
     void o_l2add() {                    
         carry_spnew = sp_div(sum, base);
-        sum_spnew = sp_mod(sum, base);
-        res_spnew = prepend(res, sum);
+        res_spnew = prepend(res, sp_mod(sum, base));
         list2_spnew = removeLast(list2);
         
         carry = carry_spnew;
-        sum = sum_spnew;
         res = res_spnew;
         list2 = list2_spnew;       
 
         if(debug_spv) {
             cout << "o_l2add" << " ; "  
-             << "" << ";"  << "" << ";"  << list2 << ";"  << carry << ";"  << sum << ";"  << res  
+             << "" << ";"  << "" << ";"  << list2 << ";"  << carry << ";"  << "" << ";"  << res  
             << endl;   
         }
 
         if(l2_empty()) {
-            if(carry_set()) {
-                o_carry();
-            } else {
-                o_end();
-            }
+            o_carry();
         } else {
             o_calc();
         }
     }
 
     void o_carry() {                    
-        res_spnew = prepend(res, 1);
+        res_spnew = sp_if(sp_eq(carry, 1), prepend(res, carry), res);
         
         res = res_spnew;       
 
@@ -178,14 +166,18 @@ class addKAry_class {
             << endl;   
         }
 
-        if(or_empty()) {
-            if(l1_empty()) {
-                o_calc_l2();
-            } else {
-                o_calc_l1();
-            }
+        if(and_empty()) {
+            o_carry();
         } else {
-            o_calc_both();
+            if(or_empty()) {
+                if(l1_empty()) {
+                    o_calc_l2();
+                } else {
+                    o_calc_l1();
+                }
+            } else {
+                o_calc_both();
+            }
         }
     }
 

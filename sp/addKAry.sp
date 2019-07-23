@@ -35,20 +35,18 @@ o_next:
   
 o_l1add:
   carry = (sp_div sum base)
-  sum = (sp_mod sum base)
   
-  res = (prepend res sum)
+  res = (prepend res (sp_mod sum base))
   list1 = (removeLast list1)
   
 o_l2add:
   carry = (sp_div sum base)
-  sum = (sp_mod sum base)
   
-  res = (prepend res sum)
+  res = (prepend res (sp_mod sum base))
   list2 = (removeLast list2)
   
 o_carry:
-  res = (prepend res 1)
+  res = (sp_if (sp_eq carry 1) (prepend res carry) res)
   
 o_end:
 
@@ -66,14 +64,14 @@ o_calc_l2:
 #FLOW
 o_init = (and_empty o_end o_calc)
 o_next = (o_calc)
-o_l2add = (l2_empty (carry_set o_carry o_end) o_calc)
-o_l1add = (l1_empty (carry_set o_carry o_end) o_calc)
-o_carry = (o_end)
-o_calc = (or_empty (l1_empty o_calc_l2 o_calc_l1) o_calc_both)
+o_l2add = (l2_empty (o_carry) o_calc)
+o_l1add = (l1_empty (o_carry) o_calc)
+o_carry = o_end
+o_calc = (and_empty o_carry (or_empty (l1_empty o_calc_l2 o_calc_l1) o_calc_both))
 o_calc_both = o_next
 o_calc_l1 = o_l1add
 o_calc_l2 = o_l2add
-o_end = RETURN 
+o_end = RETURN
 
 
 
