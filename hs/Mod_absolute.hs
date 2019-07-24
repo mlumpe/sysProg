@@ -17,8 +17,8 @@ import Types
 
 
 trace' :: String -> a -> a
-trace' str x = (trace str x) 
---trace' str x = x
+--trace' str x = (trace str x) 
+trace' str x = x
 
 data Data_absolute  = Data_absolute  { 
   a :: Int,
