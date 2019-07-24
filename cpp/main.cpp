@@ -3,6 +3,7 @@
 
 //Einbinden der selbst geschriebenen Programme
 
+
 #include "Mod_vier.cpp"
 #include "Mod_stream.cpp"
 #include "Mod_flood.cpp"
@@ -10,7 +11,6 @@
 
 
 int main() {  
-
 
     //Code zum Testen    
     cout << "*** Tests ***" << endl;
@@ -44,6 +44,37 @@ int main() {
 	cout << stream("a", "ab") << endl;
 	
     
+    
+    cout << "firstChild(Tree, Node)" << endl;
+    cout << "firstChild(t2, v25)" << endl;
+    cout << firstChild(t2, v25) << endl;
+    cout << "firstChild(t2, v23)" << endl;
+    cout << firstChild(t2, v23) << endl;
+    cout << "firstChild(t2, v22)" << endl;
+    cout << firstChild(t2, v22) << endl;
+    
+    //cout << "nextSibling(Tree, Node)" << endl;
+    //cout << nextSibling(t2, v26) << endl;
+    
+    cout << "allNodes(Tree)" << endl;
+    cout << "allNodes(t1)" << endl;
+    cout << allNodes(t1) << endl;
+    cout << "allNodes(t2)" << endl;
+    cout << allNodes(t2) << endl;
+    cout << "allNodes(t4)" << endl;
+    cout << allNodes(t4) << endl;
+    cout << "allNodes(t5)" << endl;
+    cout << allNodes(t5) << endl;
+
+    cout << "removeSubtree(Tree, Node)" << endl;
+    cout << "removeSubtree(t2, v5)" << endl;
+    cout << removeSubtree(t2, v25) << endl;
+    cout << "removeSubtree(t2, v2)" << endl;
+    cout << removeSubtree(t2, v22) << endl;
+    cout << "removeSubtree(t1, v1)" << endl;
+    cout << removeSubtree(t1, v11) << endl;
+    
+    //cout << depth(t5) << endl;
     
     return 0;
 }

@@ -1,5 +1,5 @@
 module Mod_treeToString ( treeToString ) where
-import Prelude hiding (and, or) 
+import Prelude hiding (and, or)
 import Debug.Trace
 import Splib
 import Types
@@ -9,7 +9,7 @@ treeToString :: Tree -> String
 treeToString tree = tTSHelper tree 0
 
 tTSHelper :: Tree -> Int -> String
-tTSHelper tree d = (tTSHelperSpaces 0 d []) ++ (show (root tree)) ++ "\n" ++ (tTSHelperChildren 0 tree [] d)
+tTSHelper tree d = (tTSHelperSpaces 0 (3*d) []) ++ (show (root tree)) ++ "\n" ++ (tTSHelperChildren 0 tree [] d)
 
 tTSHelperSpaces :: Int -> Int -> String -> String
 tTSHelperSpaces i d res | i==d = res
