@@ -9,7 +9,7 @@ treeToString :: Tree -> String
 treeToString tree = tTSHelper tree 0
 
 tTSHelper :: Tree -> Int -> String
-tTSHelper tree d = ("\n" ++ tTSHelperSpaces 0 d []) ++ (show (root tree)) ++ (tTSHelperChildren 0 tree [] d)
+tTSHelper tree d = (tTSHelperSpaces 0 d []) ++ (show (root tree)) ++ "\n" ++ (tTSHelperChildren 0 tree [] d)
 
 tTSHelperSpaces :: Int -> Int -> String -> String
 tTSHelperSpaces i d res | i==d = res
