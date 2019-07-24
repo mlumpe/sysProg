@@ -86,8 +86,5 @@ int main() {
     cout << sizeLogspace(t1, createNode(1) << endl;
 	
     
-    
-
-    
     return 0;
 }
