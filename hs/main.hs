@@ -4,6 +4,7 @@ import Types
 
 --Einbinden der selbst geschriebenen Programme
 
+import Mod_firstChild
 import Mod_nextSibling
 import Mod_subtree
 import Mod_treeToString
@@ -67,6 +68,8 @@ t6 = t6_9
 emptyTree = removeLeaf newTree (createNode 1)
 
 main = do putStrLn ("*** Tests ***")
+          putStrLn ("firstChild t2 v5")
+          putStrLn (show (firstChild t2 (createNode 5)))
           putStrLn ("nextSibling t2 v6")
           putStrLn (show (nextSibling t2 (createNode 6)))
           putStrLn ("nextSibling t2 v7")
