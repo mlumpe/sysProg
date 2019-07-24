@@ -8,7 +8,7 @@ res	: Node	: o
 
 #OPS
 o_init:
-	res = (first (children t i)) 
+	res = (first (children t n)) 
 
 #FLOW
 o_init = RETURN

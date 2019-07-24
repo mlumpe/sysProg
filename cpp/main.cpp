@@ -6,6 +6,20 @@
 #include "Mod_subtree.cpp"
 #include "Mod_multiplyList.cpp"
 #include "Mod_treeToString.cpp"
+#include "Mod_absolute.cpp"
+#include "Mod_factorial.cpp"
+#include "Mod_fibonacci.cpp"
+#include "Mod_isPrime.cpp"
+#include "Mod_nthPrime.cpp"
+#include "Mod_toBinary.cpp"
+#include "Mod_fromBinary.cpp"
+#include "Mod_addBinary.cpp"
+#include "Mod_multBinary.cpp"
+#include "Mod_addKAry.cpp"
+#include "Mod_firstChild.cpp"
+#include "Mod_allNodes.cpp"
+#include "Mod_removeSubtree.cpp"
+//#include "Mod_depth.cpp"
 
 
 int main() {  
@@ -83,8 +97,6 @@ int main() {
     t6 = addOwnLeaf(t6, v64, v63);
     t6 = addOwnLeaf(t6, v69, v65);
 
-
-
     //Code zum Testen    
     cout << "*** Tests ***" << endl;
 	cout << "treeToString(t1)" << endl;
@@ -100,6 +112,37 @@ int main() {
 	cout << "treeToString(t6)" << endl;
 	cout << treeToString(t6) << endl;
     
+    
+    cout << "firstChild(Tree, Node)" << endl;
+    cout << "firstChild(t2, v25)" << endl;
+    cout << firstChild(t2, v25) << endl;
+    cout << "firstChild(t2, v23)" << endl;
+    cout << firstChild(t2, v23) << endl;
+    cout << "firstChild(t2, v22)" << endl;
+    cout << firstChild(t2, v22) << endl;
+    
+    //cout << "nextSibling(Tree, Node)" << endl;
+    //cout << nextSibling(t2, v26) << endl;
+    
+    cout << "allNodes(Tree)" << endl;
+    cout << "allNodes(t1)" << endl;
+    cout << allNodes(t1) << endl;
+    cout << "allNodes(t2)" << endl;
+    cout << allNodes(t2) << endl;
+    cout << "allNodes(t4)" << endl;
+    cout << allNodes(t4) << endl;
+    cout << "allNodes(t5)" << endl;
+    cout << allNodes(t5) << endl;
+
+    cout << "removeSubtree(Tree, Node)" << endl;
+    cout << "removeSubtree(t2, v5)" << endl;
+    cout << removeSubtree(t2, v25) << endl;
+    cout << "removeSubtree(t2, v2)" << endl;
+    cout << removeSubtree(t2, v22) << endl;
+    cout << "removeSubtree(t1, v1)" << endl;
+    cout << removeSubtree(t1, v11) << endl;
+    
+    //cout << depth(t5) << endl;
     
     return 0;
 }
