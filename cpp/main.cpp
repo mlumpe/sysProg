@@ -40,6 +40,8 @@ int main() {
 	cout << stream("abacaaa", "a*a") << endl;
 	cout << "stream(abacaaa, *)" << endl;
 	cout << stream("abacaaa", "*") << endl;
+	cout << "stream(a, ab)" << endl;
+	cout << stream("a", "ab") << endl;
 	
     
     

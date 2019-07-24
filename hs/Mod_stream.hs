@@ -5,9 +5,8 @@ import Splib
 import Types
 
 stream :: String -> String -> [Int]
-stream str pattern = streamHelper str pattern 0 [] []
-             where 
-              k = length pattern
+stream str pattern | length str < length pattern = []
+                   | otherwise = streamHelper str pattern 0 [] []
   
 streamHelper :: String -> String -> Int -> String -> [Int] -> [Int]
 streamHelper str pattern k window res 

@@ -13,6 +13,9 @@ bool equals(List<Char> window, List<Char> pattern){
 List<Int> stream(String str, String pat){
 	List<Char> s = s2lc(str);
 	List<Char> pattern = s2lc(pat);
+	if(length(s) < length(pattern)){
+		return List<Int>();
+	}
 	List<Char> window;
 	List<Int> result;
 	int i;

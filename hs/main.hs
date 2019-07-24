@@ -39,4 +39,6 @@ main = do putStrLn ("*** Tests ***")
           putStrLn (show (stream "abacaaa" "a*a"))
           putStrLn ("stream abacaaa *")
           putStrLn (show (stream "abacaaa" "*"))
+          putStrLn ("stream a ab")
+          putStrLn (show (stream "a" "ab"))
           
