@@ -14,9 +14,5 @@ Tree removeSubtree_h(Tree t, Node v) {
 }
 
 Tree removeSubtree(Tree t, Node v) {
-    if (isLeaf(t,v)) {
-        return t;
-    } else {
-        return removeSubtree_h(t, v);
-    }
+    return removeLeaf(removeSubtree_h(t, v), v);
 }

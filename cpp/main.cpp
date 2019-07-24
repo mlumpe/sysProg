@@ -19,7 +19,10 @@
 #include "Mod_firstChild.cpp"
 #include "Mod_allNodes.cpp"
 #include "Mod_removeSubtree.cpp"
-//#include "Mod_depth.cpp"
+#include "Mod_nextSibling.cpp"
+#include "Mod_hasNextSibling.cpp"
+#include "Mod_isomorphism.cpp"
+#include "Mod_depth.cpp"
 
 
 int main() {  
@@ -139,10 +142,43 @@ int main() {
     cout << removeSubtree(t2, v25) << endl;
     cout << "removeSubtree(t2, v2)" << endl;
     cout << removeSubtree(t2, v22) << endl;
-    cout << "removeSubtree(t1, v1)" << endl;
-    cout << removeSubtree(t1, v11) << endl;
+
+    cout << "nextSibling(t2, v6)" << endl;
+    cout << nextSibling(t2, v26) << endl;
+    cout << "nextSibling(t2, v7)" << endl;
+    cout << nextSibling(t2, v27) << endl;
+    cout << "nextSibling(t2, v4)" << endl;
+    cout << nextSibling(t2, v24) << endl;
     
-    //cout << depth(t5) << endl;
+    cout << "hasNextSibling(Tree, Node)" << endl;
+    cout << "hasNextSibling(t2, v1)" << endl;
+    cout << hasNextSibling(t2, v21) << endl;
+    cout << "hasNextSibling(t2, v2)" << endl;
+    cout << hasNextSibling(t2, v22) << endl;
+    cout << "hasNextSibling(t2, v3)" << endl;
+    cout << hasNextSibling(t2, v23) << endl;
+    cout << "hasNextSibling(t2, v7)" << endl;
+    cout << hasNextSibling(t2, v27) << endl;
+    cout << "hasNextSibling(t2, v8)" << endl;
+    cout << hasNextSibling(t2, v28) << endl;
+    
+    cout << "isomorphism(Tree, Tree)" << endl;
+    cout << "isomorphism(t2, t6)" << endl;
+    cout << isomorphism(t2, t6) << endl;
+    cout << "isomorphism(t1, t2)" << endl;
+    cout << isomorphism(t1, t2) << endl;
+    
+    cout << "depth(Tree)" << endl;
+    cout << "depth(t1)" << endl;
+    cout << depth(t1) << endl;
+    cout << "depth(t2)" << endl;
+    cout << depth(t2) << endl;
+    cout << "depth(t5)" << endl;
+    cout << depth(t5) << endl;
+    cout << "depth(t6)" << endl;
+    cout << depth(t6) << endl;
+    cout << "depth(t3)" << endl;
+    cout << depth(t3) << endl;
     
     return 0;
 }
