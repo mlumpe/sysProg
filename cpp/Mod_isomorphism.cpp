@@ -1,29 +1,55 @@
+#pragma once
+
 bool isIsomorph(Tree t1, Tree t2) {
     if(isLeaf(t1, root(t1)) && isLeaf(t2, root(t2))) {
         return true;
     }
     
     if (length(children(t1, root(t1))) == length(children(t2, root(t2)))) {
-        int len = length(children(t1, root(t1)));
-        for (int i = 0; i < len; i++) {
-            return isIsomorph(subtree(t1, get(children(t1, root(t1)), i)), subtree(t2, get(children(t2, root(t2)), i)));
+        List<Node> toMatch1 = children(t1, root(t1));
+        List<Node> toMatch2 = children(t2, root(t2));
+        
+        int cnt = 0;
+        while(!empty(toMatch1)){
+            Node n1 = first(toMatch1);
+            Node n2 = first(toMatch2);
+            if(cnt > length(toMatch2)){
+                return false;
+            }
+            
+            if(isIsomorph(subtree(t1, n1), subtree(t2, n2))){
+                toMatch1 = removeFirst(toMatch1);
+                toMatch2 = removeFirst(toMatch2);
+                cnt = 0;
+            }else{
+                toMatch2 = append(removeFirst(toMatch2), first(toMatch2));
+                cnt++;
+            }
         }
+        return true;
+    }else{
+        return false;
     }
-    
-    return false;
 }
 
 Map<Node, Node> mapIsomorph(Tree t1, Tree t2, Map<Node, Node> map) {
     map = setImage(map, root(t1), root(t2));
-    int len = length(children(t1, root(t1)));
     
-    for (int i = 0; i < len; i++) {
-        Node curr1 = get(children(t1, root(t1)), i);
-        Node curr2 = get(children(t2, root(t2)), i);
-
-        map = mapIsomorph(subtree(t1, curr1), subtree(t2, curr2), map);
+    List<Node> toMatch1 = children(t1, root(t1));
+    List<Node> toMatch2 = children(t2, root(t2));
+        
+    while(!empty(toMatch1)){
+        Node n1 = first(toMatch1);
+        Node n2 = first(toMatch2);
+        
+        if(isIsomorph(subtree(t1, n1), subtree(t2, n2))){
+           toMatch1 = removeFirst(toMatch1);
+           toMatch2 = removeFirst(toMatch2);
+           map = mapIsomorph(subtree(t1, n1), subtree(t2, n2), map);
+        }else{
+            toMatch2 = append(removeFirst(toMatch2), first(toMatch2));
+        }
     }
-    
     return map;
 }
 

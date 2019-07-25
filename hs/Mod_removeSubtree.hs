@@ -14,5 +14,5 @@ removeNodes tree nodes sizeO | empty nodes = tree
                              | size newTree < sizeO = removeNodes newTree (removeLast nodes) (sizeO-1)
                              | otherwise = removeNodes newTree (prepend (removeLast nodes) lastN) sizeO
                      where 
-					       newTree = removeLeaf tree (last nodes)
-					       lastN = last nodes
+                       newTree = removeLeaf tree (last nodes)
+                       lastN = last nodes

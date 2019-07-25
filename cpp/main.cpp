@@ -99,6 +99,26 @@ int main() {
     t6 = addOwnLeaf(t6, v64, v67);
     t6 = addOwnLeaf(t6, v64, v63);
     t6 = addOwnLeaf(t6, v69, v65);
+    
+    /* Tree t7 */
+    Node v76 = createNode(6);
+    Node v72 = createNode(2);
+    Node v79 = createNode(9);
+    Node v71 = createNode(1);
+    Node v74 = createNode(4);
+    Node v75 = createNode(5);
+    Node v718 = createNode(18);
+    Node v77 = createNode(7);
+    Node v73 = createNode(3);
+    Tree t7 = newTreeOwn(v76);
+    t7 = addOwnLeaf(t7, v76, v72);
+    t7 = addOwnLeaf(t7, v76, v79);
+    t7 = addOwnLeaf(t7, v72, v74);
+    t7 = addOwnLeaf(t7, v72, v71);
+    t7 = addOwnLeaf(t7, v74, v718);
+    t7 = addOwnLeaf(t7, v74, v77);
+    t7 = addOwnLeaf(t7, v74, v73);
+    t7 = addOwnLeaf(t7, v79, v75);
 
     //Code zum Testen    
     cout << "*** Tests ***" << endl;
@@ -167,6 +187,8 @@ int main() {
     cout << isomorphism(t2, t6) << endl;
     cout << "isomorphism(t1, t2)" << endl;
     cout << isomorphism(t1, t2) << endl;
+    cout << "isomorphism(t2, t7)" << endl;
+    cout << isomorphism(t2, t7) << endl;
     
     cout << "depth(Tree)" << endl;
     cout << "depth(t1)" << endl;

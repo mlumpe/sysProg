@@ -8,5 +8,5 @@ nextSibling tree node = get (children tree (parent tree node)) ((findIndex tree 
 
 findIndex tree node i | get (childs) i == node = i
                       | otherwise = findIndex tree node (i+1)
-					  where
-					   childs = children tree (parent tree node)
+                      where
+                        childs = children tree (parent tree node)

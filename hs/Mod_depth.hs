@@ -11,7 +11,7 @@ depth tree = depthHelper tree 0
 depthHelper :: Tree -> Int -> Int
 depthHelper tree i | isLeaf tree (root tree) = i
                    | otherwise = depthChilds tree (i+1) 0 0
-		
+
 depthChilds :: Tree -> Int -> Int -> Int -> Int
 depthChilds tree i j max | j == length childs = max
                          | otherwise = depthChilds tree i (j+1) (sp_max max (depthHelper (subtree tree (get childs j)) i))
