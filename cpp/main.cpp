@@ -193,6 +193,50 @@ int main() {
 
     t10 = addOwnLeaf(t10, v103, v104);
     t10 = addOwnLeaf(t10, v106, v107);
+    
+    /* Tree t11 */
+    Node v111 = createNode(1);
+    Node v112 = createNode(2);
+    Node v113 = createNode(3);
+    Node v114 = createNode(4);
+    Node v115 = createNode(5);
+    Node v116 = createNode(6);
+    Node v117 = createNode(7);
+    Node v118 = createNode(8);
+    Node v119 = createNode(9);
+    Node v1110 = createNode(10);
+    Tree t11 = newTreeOwn(v111);
+    t11 = addOwnLeaf(t11, v111, v112);
+    t11 = addOwnLeaf(t11, v111, v113);
+    t11 = addOwnLeaf(t11, v112, v1110);
+    t11 = addOwnLeaf(t11, v1110, v114);
+    t11 = addOwnLeaf(t11, v113, v115);
+    t11 = addOwnLeaf(t11, v114, v116);
+    t11 = addOwnLeaf(t11, v114, v117);
+    t11 = addOwnLeaf(t11, v116, v118);
+    t11 = addOwnLeaf(t11, v118, v119);
+    
+    /* Tree t12 */
+    Node v121 = createNode(1);
+    Node v122 = createNode(2);
+    Node v123 = createNode(3);
+    Node v124 = createNode(4);
+    Node v125 = createNode(5);
+    Node v126 = createNode(6);
+    Node v127 = createNode(7);
+    Node v128 = createNode(8);
+    Node v129 = createNode(9);
+    Node v1210 = createNode(10);
+    Tree t12 = newTreeOwn(v121);
+    t12 = addOwnLeaf(t12, v121, v122);
+    t12 = addOwnLeaf(t12, v121, v123);
+    t12 = addOwnLeaf(t12, v122, v1210);
+    t12 = addOwnLeaf(t12, v1210, v124);
+    t12 = addOwnLeaf(t12, v123, v125);
+    t12 = addOwnLeaf(t12, v124, v126);
+    t12 = addOwnLeaf(t12, v124, v127);
+    t12 = addOwnLeaf(t12, v126, v128);
+    t12 = addOwnLeaf(t12, v127, v129);
 
     //cout << treeToString(t10) << endl;
     
@@ -208,6 +252,14 @@ int main() {
     cout << nonRecursiveCheck(t1, t1, createNode(1), createNode(1)) << endl;
     cout << "nonRecursiveCheck(t3, t2, v5, v1)" << endl;
     cout << nonRecursiveCheck(t3, t2, createNode(5), createNode(1)) << endl;
+    cout << "nonRecursiveCheck(t11, t12, v1, v1)" << endl;
+    //cout << nonRecursiveCheck(t11, t12, root(t11), root(t12)) << endl;
+    /**cout << "nonRecursiveCheck(t11, t12, v2, v2)" << endl;
+    cout << nonRecursiveCheck(t11, t12, createNode(2), createNode(2)) << endl;
+    cout << "nonRecursiveCheck(t11, t12, v10, v10)" << endl;
+    cout << nonRecursiveCheck(t11, t12, createNode(10), createNode(10)) << endl;
+    cout << "nonRecursiveCheck(t11, t12, v4, v4)" << endl;
+    cout << nonRecursiveCheck(t11, t12, createNode(4), createNode(4)) << endl;*/
 	
     cout << "lindell(t7, t8)" << endl;
     cout << lindell(t7,t8) << " -> 0" << endl;
@@ -215,6 +267,8 @@ int main() {
     cout << lindell(t9,t10) << " -> 1" << endl;
     cout << "lindell(t10, t9)" << endl;
     cout << lindell(t10,t9) << " -> -1" << endl;
+    cout << "lindell(t11, t12)" << endl;
+    cout << lindell(t11,t12) << " 1 oder -1" << endl;
     
     return 0;
 }
