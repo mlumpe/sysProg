@@ -56,6 +56,7 @@ List<Int> stream(String str, String pat){
 	List<Char> window;
 	List<Int> result;
 	int i;
+    //Initialisierung
 	for(i = 0; i<length(pattern); i++){
 		if(empty(s)){
 			return {};

@@ -2,22 +2,24 @@
 
 #include "Mod_absolute.cpp"
 
+//Überprüft ob man sich innerhalb des Spielfeldes bewegt
 bool checkBoundary(List<Int> matrix, int width, int x, int y){
 	if(x>=0 && x < width && y>=0 && length(matrix) > (y*width+x))
 		return true;
 	return false;
 }
 
+//Neuberechnung der Koordinaten
 int dirChangeX(int x, int a){
 	switch (a){
-		case 0:
-		case 4: return x;
-		case 1:
-		case 2:
-		case 3: return x+1;
-		case 5:
-		case 6:
-		case 7: return x-1;
+		case 0:                 //top
+		case 4: return x;       //bot
+		case 1:                 //right-top
+		case 2:                 //right
+		case 3: return x+1;     //right-bot
+		case 5:                 //left-bot
+		case 6:                 //left
+		case 7: return x-1;     //left-top
 	}
 	return x;
 }
@@ -47,6 +49,7 @@ bool checkWon(List<Int> matrix, int width, int x, int y, int player){
 		pos = y*width +x;
 		bool tmpWon = true;
 		
+        //vom Startpunkt in 8 Richtungen überrpüfen ob 4 in einer Reihe
 		for(int i = 0; i<4; i++){
 			if(checkBoundary(matrix, width, x, y)){
 				if(get(matrix, pos) != player){
@@ -99,6 +102,7 @@ Int vier(List<Int> zugfolge){
 				h+=1;
 			}
 		}
+        
 		if(checkWon(matrix, width, x, h, player)){
 			return player;
 		}

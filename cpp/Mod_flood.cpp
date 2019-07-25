@@ -12,6 +12,7 @@ String flood(String s, int width, int x, int y){
 	
 	str = set(str, pos, newColor);
 	
+    //left neighbor
 	if(x != 0){
 		int newX = x-1;
 		int newPos = width*y+newX;
@@ -20,6 +21,7 @@ String flood(String s, int width, int x, int y){
 		}
 	}
 	
+    //bottom neighbor
 	if(y != 0){
 		int newY = y-1;
 		int newPos = width*newY+x;
@@ -28,6 +30,7 @@ String flood(String s, int width, int x, int y){
 		}
 	}
 	
+    //right neighbor
 	if(x != (width-1)){
 		int newX = x+1;
 		int newPos = width*y+newX;
@@ -36,6 +39,7 @@ String flood(String s, int width, int x, int y){
 		}
 	}
 	
+    //top neighbor
 	if(y != sp_div(length(str), width)-1) {
 		int newY = y+1;
 		int newPos = width*newY+x;
