@@ -13,7 +13,7 @@ int main() {
 
 
     //Code zum Testen    
-    cout << "*** Tests ***" << endl;
+    /**cout << "*** Tests ***" << endl;
     cout << "matrikelNr({123,125,127})" << endl;
     cout << matrikelNr({123,125,127}) << endl;
     cout << "matrikelNr({6123,243,125})" << endl;
@@ -29,18 +29,18 @@ int main() {
 	cout << "vier({-5,2,-4,2,-3,2,-1,2})" << endl;
 	cout << vier({-5,2,-4,2,-3,2,-1,2}) << endl;
 	cout << "vier({0,1})" << endl;
-	cout << vier({0,1}) << endl;
-	cout << "stream(abc, d)" << endl;
-	cout << stream("abc", "d") << endl;
-	cout << "stream(aaaa, aa)" << endl;
-	cout << stream("aaaa", "aa") << endl;
-	cout << "stream(caaca, *a)" << endl;
-	cout << stream("caaca", "*a") << endl;
+	cout << vier({0,1}) << endl;*/
+	//cout << "stream(abc, d)" << endl;
+	//cout << stream("abc", "d") << endl;
+	//cout << "stream(aaaa, aa)" << endl;
+	//cout << stream("aaaa", "aa") << endl;
+	//cout << "stream(caaca, *a)" << endl;
+	//cout << stream("caaca", "*a") << endl;
 	cout << "stream(abacaaa, a*a)" << endl;
 	cout << stream("abacaaa", "a*a") << endl;
-	cout << "stream(abacaaa, *)" << endl;
+	/**cout << "stream(abacaaa, *)" << endl;
 	cout << stream("abacaaa", "*") << endl;
 	cout << "stream(a, ab)" << endl;
-	cout << stream("a", "ab") << endl; 
+	cout << stream("a", "ab") << endl; */
     return 0;
 }

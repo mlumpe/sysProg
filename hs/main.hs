@@ -13,7 +13,7 @@ import Mod_vier
 --Code zum Testen der geschriebenen Funktionen
 
 main = do putStrLn ("*** Tests ***")
-          putStrLn ("matrikelNr [123,125,127]")
+          {-putStrLn ("matrikelNr [123,125,127]")
           putStrLn (show (matrikelNr [123,125,127]))
           putStrLn ("matrikelNr [6123,243,125]")
           putStrLn (show (matrikelNr [6123,243,125]))
@@ -34,11 +34,11 @@ main = do putStrLn ("*** Tests ***")
           putStrLn ("stream aaaa aa")
           putStrLn (show (stream "aaaa" "aa"))
           putStrLn ("stream caaca *a")
-          putStrLn (show (stream "caaca" "*a"))
+          putStrLn (show (stream "caaca" "*a"))-}
           putStrLn ("stream abacaaa a*a")
           putStrLn (show (stream "abacaaa" "a*a"))
           putStrLn ("stream abacaaa *")
           putStrLn (show (stream "abacaaa" "*"))
-          putStrLn ("stream a ab")
-          putStrLn (show (stream "a" "ab"))
+          --putStrLn ("stream a ab")
+          --putStrLn (show (stream "a" "ab"))
           

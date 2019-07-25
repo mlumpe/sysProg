@@ -1,0 +1,11 @@
+stream(abacaaa, a*a)
+string;pattern;window;result
+abacaaa;a*a;;[]
+bacaaa;a*a;a;[]
+acaaa;a*a;ab;[]
+caaa;a*a;aba;[]
+aaa;a*a;bac;[0]
+aa;a*a;aca;[0]
+a;a*a;caa;[0,2]
+;a*a;aaa;[0,2]
+[0,2,4]

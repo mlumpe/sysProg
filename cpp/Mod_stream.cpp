@@ -11,6 +11,7 @@ bool equals(List<Char> window, List<Char> pattern){
 }
 
 List<Int> stream(String str, String pat){
+	cout << "string;pattern;window;result" << endl;
 	List<Char> s = s2lc(str);
 	List<Char> pattern = s2lc(pat);
 	if(length(s) < length(pattern)){
@@ -20,6 +21,7 @@ List<Int> stream(String str, String pat){
 	List<Int> result;
 	int i;
 	for(i = 0; i<length(pattern); i++){
+		cout << lc2s(s) << ";" << lc2s(pattern) << ";" << lc2s(window) << ";" << result << endl;
 		if(empty(s)){
 			return {};
 		}
@@ -28,6 +30,7 @@ List<Int> stream(String str, String pat){
 		s = removeFirst(s);
 	}
 	while(!empty(s)){
+		cout << lc2s(s) << ";" << lc2s(pattern) << ";" << lc2s(window) << ";" << result << endl;
 		if(equals(window, pattern)){
 			result = append(result, i-length(pattern));
 		}
@@ -37,6 +40,7 @@ List<Int> stream(String str, String pat){
 		window = append(window, f);
 		i++;
 	}
+	cout << lc2s(s) << ";" << lc2s(pattern) << ";" << lc2s(window) << ";" << result << endl;
 	if(equals(window, pattern)){
 		result = append(result, i-length(pattern));
 	}
