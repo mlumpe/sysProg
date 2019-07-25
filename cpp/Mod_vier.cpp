@@ -36,39 +36,44 @@ int dirChangeY(int y, int a){
 	return y;
 }
 
+bool checkWonList(List<Int> steine){
+	if(get(steine, 0) + get(steine, 4) > 4 ||
+	   get(steine, 1) + get(steine, 5) > 4 ||
+	   get(steine, 2) + get(steine, 6) > 4 ||
+	   get(steine, 3) + get(steine, 7) > 4)
+		return true;
+	return false;
+}
+
 bool checkWon(List<Int> matrix, int width, int x, int y, int player){
-	bool won = false;
 	int pos = y*width +x;
 	int xstart = x;
 	int ystart = y;
+	List<Int> steine;
 	for(int a = 0; a<8; a++){
 		x = xstart;
 		y = ystart;
 		pos = y*width +x;
-		bool tmpWon = true;
 		
+		int cnt = 0;
 		for(int i = 0; i<4; i++){
 			if(checkBoundary(matrix, width, x, y)){
-				if(get(matrix, pos) != player){
-					tmpWon = false;
+				if(get(matrix, pos) == player){
+					cnt++;
+				}else{
 					break;
 				}
 			}else{
-				tmpWon = false;
 				break;
 			}
 			x = dirChangeX(x, a);
 			y = dirChangeY(y, a);
 			pos = y*width+x;
 		}
-		if(tmpWon){
-			won = true;
-			break;
-		}
+		steine = append(steine, cnt);
 	}
-	return won;
+	return checkWonList(steine);
 }
-
 
 
 Int vier(List<Int> zugfolge){
