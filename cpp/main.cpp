@@ -5,6 +5,7 @@
 #include "Mod_treeToString.cpp"
 #include "Mod_sizeLogspace.cpp"
 #include "Mod_nonRecursiveCheck.cpp"
+#include "Mod_lindell.cpp"
 
 
 int main() {  
@@ -208,6 +209,12 @@ int main() {
     cout << "nonRecursiveCheck(t3, t2, v5, v1)" << endl;
     cout << nonRecursiveCheck(t3, t2, createNode(5), createNode(1)) << endl;
 	
+    cout << "lindell(t7, t8)" << endl;
+    cout << lindell(t7,t8) << " -> 0" << endl;
+    cout << "lindell(t9, t10)" << endl;
+    cout << lindell(t9,t10) << " -> 1" << endl;
+    cout << "lindell(t10, t9)" << endl;
+    cout << lindell(t10,t9) << " -> -1" << endl;
     
     return 0;
 }
