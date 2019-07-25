@@ -1,3 +1,5 @@
+#pragma once
+
 List<Node> helper(Tree t, Node v, List<Node> res) {
     if(isLeaf(t,v)) {
         return res;

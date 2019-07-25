@@ -1,3 +1,5 @@
+#pragma once
+
 int findIndex(Tree t, Node n, int i) {
     List<Node> childs = children(t, parent(t,n));
     if(get(childs,i) == n) {
