@@ -1,5 +1,7 @@
 #pragma once
 
+#include "Mod_subtree.cpp"
+
 String treeToStringHelper(Tree tree, int d){
 	Node act = root(tree);
 	String res;

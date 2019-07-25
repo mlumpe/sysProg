@@ -1,13 +1,18 @@
-//#include "Mod_nextSibling.cpp"
+#pragma once
 
 bool hasNextSibling(Tree t, Node v) {
-    Node n;
-    try {
-        n = nextSibling(t,v);
-    } catch (exception& e) {
-        return false;
+    if(isRoot(t, v)) return false;
+    
+    List<Node> sibling = children(t,parent(t,v));
+    int i = 0;
+    
+    while(!(get(sibling, i) == v)) {
+        i++;
     }
     
-    if(sp_eq(n, (createNode(-1)))) return false;
-    return true;
+    if(length(sibling) > i+1) {
+        return true;
+    } else {
+        return false;
+    }
 }

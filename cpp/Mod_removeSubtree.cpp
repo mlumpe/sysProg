@@ -1,3 +1,5 @@
+#pragma once
+
 Tree removeSubtree_h(Tree t, Node v) {
     List<Node> lst = children(t,v);
     for (int i = 0; i < length(lst); i++) {

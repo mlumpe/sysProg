@@ -1,3 +1,7 @@
+#pragma once
+
+#include "Mod_subtree.cpp"
+
 int depth(Tree t) {
     int len = length(children(t, root(t)));
     int maximum = 0;
