@@ -4,7 +4,7 @@
 //Einbinden der selbst geschriebenen Programme
 #include "Mod_treeToString.cpp"
 #include "Mod_sizeLogspace.cpp"
-//#include "Mod_nonRecursiveCheck.cpp"
+#include "Mod_nonRecursiveCheck.cpp"
 
 
 int main() {  
