@@ -15,7 +15,7 @@ int numChildren(Tree t1, Node n1){
 		n = nextSibling(t1, n);
 		cnt++;
 	}
-	return true;
+	return cnt;
 }
 
 int countNumber(Tree t, Node root, int number){
@@ -37,9 +37,9 @@ int countNumber(Tree t, Node root, int number){
 	return cnt;
 }
 
-bool lexikoLess(Tree t1, Tree t2, Node n1, Node n2, int numChildren){
+bool lexikoLess(Tree t1, Tree t2, Node n1, Node n2, int numChilds){
 	int act = 0;
-	while(numChildren != 0){
+	while(numChilds != 0){
 		int c1 = countNumber(t1, n1, act);
 		int c2 = countNumber(t2, n2, act);
 		if(c1>c2)
@@ -47,7 +47,7 @@ bool lexikoLess(Tree t1, Tree t2, Node n1, Node n2, int numChildren){
 		else if(c1<c2)
 			return false;
 		else{
-			numChildren -= c1;
+			numChilds -= c1;
 			act++;
 		}
 	}
