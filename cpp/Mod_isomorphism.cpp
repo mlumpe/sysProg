@@ -1,5 +1,7 @@
 #pragma once
 
+#include "Mod_subtree.cpp"
+
 bool isIsomorph(Tree t1, Tree t2) {
     if(isLeaf(t1, root(t1)) && isLeaf(t2, root(t2))) {
         return true;
