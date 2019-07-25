@@ -88,6 +88,10 @@ int main() {
     cout << sizeLogspace(t2, createNode(2)) << endl;
     cout << "sizeLogspace(t4, v3)" << endl;
     cout << sizeLogspace(t4, createNode(3)) << endl;
+    cout << "nonRecursiveCheck(t1, t1, v1, v1)" << endl;
+    cout << nonRecursiveCheck(t1, t1, createNode(1), createNode(1)) << endl;
+    cout << "nonRecursiveCheck(t3, t2, v5, v1)" << endl;
+    cout << nonRecursiveCheck(t3, t2, createNode(5), createNode(1)) << endl;
 	
     
     return 0;
