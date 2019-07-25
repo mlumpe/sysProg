@@ -1,4 +1,6 @@
-//#include "Mod_nextSibling.cpp"
+#pragma once
+
+#include "Mod_nextSibling.cpp"
 
 bool hasNextSibling(Tree t, Node v) {
     Node n;

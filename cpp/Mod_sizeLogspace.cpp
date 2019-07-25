@@ -12,6 +12,7 @@ int sizeLogspace(Tree t, Node n){
 		return cnt;
 	}
 	n = firstChild(t, n);
+	cnt++;
 	
 	while(true){
 		if(last == 0 || last == 1){

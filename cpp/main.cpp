@@ -2,8 +2,8 @@
 #include "types.cpp"
 
 //Einbinden der selbst geschriebenen Programme
-
 #include "Mod_sizeLogspace.cpp"
+#include "Mod_nonRecursiveCheck.cpp"
 
 
 int main() {  
@@ -83,7 +83,11 @@ int main() {
     //Code zum Testen    
     cout << "*** Tests ***" << endl;
     cout << "sizeLogspace(t1, v1)" << endl;
-    cout << sizeLogspace(t1, createNode(1) << endl;
+    cout << sizeLogspace(t1, createNode(1)) << endl;
+    cout << "sizeLogspace(t2, v2)" << endl;
+    cout << sizeLogspace(t2, createNode(2)) << endl;
+    cout << "sizeLogspace(t4, v3)" << endl;
+    cout << sizeLogspace(t4, createNode(3)) << endl;
 	
     
     return 0;
