@@ -34,7 +34,7 @@ Tuple2<bool, Node> kBlockSize(Tree t, Node v, int minimum = 0) {
     return tuple2(found, resKid);
 }
 
-int lindell(Tree s, Tree t) {
+int lindell_debug(Tree s, Tree t) {
     cout << "u;v;k;res" << endl;
     int res = 0;
     int k = 0;
@@ -46,6 +46,57 @@ int lindell(Tree s, Tree t) {
     Node actV = root(t);
     while(true){
         cout << actU << ";" << actV << ";" << k << ";"<< res << endl;
+        if(res == 0){
+            if(nonRecursiveCheck(s,t,actU, actV)) {
+                // nicht isomorph; s[u] < t[v]
+                res = -1;
+            } else if(nonRecursiveCheck(t,s,actV, actU)) {
+                //nicht isomorph; s[u] < t[v]
+                res = 1;
+            } else {
+                if(isLeaf(s,actU) && isLeaf(t, actV)){
+                    res = 0;
+                    nextPossible = false;
+                }else{
+                    nextPossible = get21(kBlockSize(s, actU, k));
+                    ku = get22(kBlockSize(s, actU, k));
+                    kv = get22(kBlockSize(t, actV, k));
+                }
+                if(!nextPossible){
+                    if(isRoot(s, actU))
+                        return res;
+                    k = sizeLogspace(s, actU);
+                    actU = parent(s, actU);
+                    actV = parent(t, actV);
+                }else{
+                    actU = ku;
+                    actV = kv;
+                    k = 0;
+                }
+            }
+        }else{
+            if(isRoot(s, actU))
+                return res;
+            k = sizeLogspace(s, actU);
+            actU = parent(s, actU);
+            actV = parent(t, actV);
+        }
+
+    }
+    return res;
+}
+
+
+int lindell(Tree s, Tree t) {
+    int res = 0;
+    int k = 0;
+    Node ku;
+    Node kv;
+    bool nextPossible;
+    
+    Node actU = root(s);
+    Node actV = root(t);
+    while(true){
         if(res == 0){
             if(nonRecursiveCheck(s,t,actU, actV)) {
                 // nicht isomorph; s[u] < t[v]
