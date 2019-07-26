@@ -1,0 +1,102 @@
+In file included from main.cpp:1:
+./splib.cpp:16:13: warning: alias declarations are a C++11 extension [-Wc++11-extensions]
+using Int = int;
+            ^
+./splib.cpp:17:14: warning: alias declarations are a C++11 extension [-Wc++11-extensions]
+using Bool = bool;
+             ^
+./splib.cpp:18:14: warning: alias declarations are a C++11 extension [-Wc++11-extensions]
+using Char = char;
+             ^
+./splib.cpp:19:16: warning: alias declarations are a C++11 extension [-Wc++11-extensions]
+using String = string;
+               ^
+./splib.cpp:20:32: warning: alias declarations are a C++11 extension [-Wc++11-extensions]
+template<class T> using List = vector<T>;
+                               ^
+./splib.cpp:28:33: warning: variadic templates are a C++11 extension [-Wc++11-extensions]
+template <typename T1, typename ... Ts>
+                                ^
+./splib.cpp:34:33: warning: variadic templates are a C++11 extension [-Wc++11-extensions]
+template <typename T1, typename ... Ts>
+                                ^
+./splib.cpp:571:19: error: a space is required between consecutive right angle brackets (use '> >')
+    List<List<Node>> clist;    
+                  ^~
+                  > >
+./splib.cpp:591:57: error: a space is required between consecutive right angle brackets (use '> >')
+    Tree(Node rootNode, List<Node> nodes, List<List<Node>> clist) : rootNode(rootNode), nodes(nodes), clist(clist) {
+                                                        ^~
+                                                        > >
+./splib.cpp:585:9: warning: 'auto' type specifier is a C++11 extension [-Wc++11-extensions]
+        auto anon = [](Node u) { return u.id; };
+        ^
+./splib.cpp:585:21: error: expected expression
+        auto anon = [](Node u) { return u.id; };
+                    ^
+./splib.cpp:586:9: warning: 'auto' type specifier is a C++11 extension [-Wc++11-extensions]
+        auto mymax = [](Int x, Int y) { return max(x,y); };
+        ^
+./splib.cpp:586:22: error: expected expression
+        auto mymax = [](Int x, Int y) { return max(x,y); };
+                     ^
+./splib.cpp:600:17: error: expected expression
+        nodes = {r};
+                ^
+./splib.cpp:601:17: error: expected expression
+        clist = {List<Node>({})};                 
+                ^
+./splib.cpp:606:17: error: expected expression
+        nodes = {r};
+                ^
+./splib.cpp:607:17: error: expected expression
+        clist = {List<Node>({})};                 
+                ^
+./splib.cpp:652:23: error: a space is required between consecutive right angle brackets (use '> >')
+        List<List<Node>> clist2 = append(clist,List<Node>({}));
+                      ^~
+                      > >
+./splib.cpp:652:59: error: expected expression
+        List<List<Node>> clist2 = append(clist,List<Node>({}));
+                                                          ^
+./splib.cpp:679:23: error: a space is required between consecutive right angle brackets (use '> >')
+        List<List<Node>> clist2 = remove(clist,index(v));
+                      ^~
+                      > >
+./splib.cpp:1536:22: error: a space is required between consecutive right angle brackets (use '> >')
+    List<Tuple2<T1,T2>> data;
+                     ^~
+                     > >
+./splib.cpp:1539:26: error: a space is required between consecutive right angle brackets (use '> >')
+    Map(List<Tuple2<T1,T2>> constr_data) : data(constr_data) {
+                         ^~
+                         > >
+./splib.cpp:1542:18: error: expected expression
+    Map() : data({}) {  }
+                 ^
+./splib.cpp:1589:26: error: a space is required between consecutive right angle brackets (use '> >')
+        List<Tuple2<T1,T2>> data2;        
+                         ^~
+                         > >
+./splib.cpp:1600:26: error: a space is required between consecutive right angle brackets (use '> >')
+        List<Tuple2<T1,T2>> data2;   
+                         ^~
+                         > >
+In file included from main.cpp:2:
+./types.cpp:10:17: warning: alias declarations are a C++11 extension [-Wc++11-extensions]
+using ListInt = List<Int>;            
+                ^
+./types.cpp:11:18: warning: alias declarations are a C++11 extension [-Wc++11-extensions]
+using List2Int = List<List<Int>>;            
+                 ^
+./types.cpp:11:31: error: a space is required between consecutive right angle brackets (use '> >')
+using List2Int = List<List<Int>>;            
+                              ^~
+                              > >
+./types.cpp:12:20: warning: alias declarations are a C++11 extension [-Wc++11-extensions]
+using ListString = List<String>;
+                   ^
+./types.cpp:13:18: warning: alias declarations are a C++11 extension [-Wc++11-extensions]
+using ListNode = List<Node>;
+                 ^
+13 warnings and 17 errors generated.

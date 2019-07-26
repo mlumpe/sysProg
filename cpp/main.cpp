@@ -6,6 +6,7 @@
 #include "Mod_parse.cpp"
 #include "Mod_treeToString.cpp"
 #include "Mod_eval.cpp"
+#include "Mod_satisfiable.cpp"
 
 
 int main() {  
@@ -53,5 +54,10 @@ int main() {
     cout << treeToString(get21(eval(res))) << endl;
 	cout << get22(eval(res)) << endl;
     
+    cout << "satisfiable(Tuple2(Tree, Map<Node, String>))" << endl;
+    cout << "var;true;false;" << endl;
+    res = parse(tokenize("(((! 1) && 1 )-> (xyz || z)))"));
+    cout << satisfiable(res) << endl;
+
     return 0;
 }
