@@ -7,6 +7,7 @@ import Types
 import Mod_treeToString
 import Mod_sizeLogspace
 import Mod_nonRecursiveCheck
+import Mod_lindell
 
 --Tree t1
 t1 = newTree
@@ -123,4 +124,13 @@ main = do putStrLn ("*** Tests ***")
           putStrLn (show (nonRecursiveCheck t1 t1 (createNode 1) (createNode 1)))
           putStrLn ("nonRecursiveCheck(t3, t2, v5, v1)")
           putStrLn (show (nonRecursiveCheck t3 t2 (createNode 5) (createNode 1)))
+
+          putStrLn ("nonRecursiveCheck(t7, t8, v1, v1)")
+          putStrLn (show (nonRecursiveCheck t7 t8 (createNode 1) (createNode 1)))
+          putStrLn ("lindell t7 t8")
+          putStrLn (show (lindell t7 t8))
+          putStrLn ("lindell t9 t10")
+          putStrLn (show (lindell t9 t10))
+          putStrLn ("lindell t10 t9")
+          putStrLn (show (lindell t10 t9))
           

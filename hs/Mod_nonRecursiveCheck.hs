@@ -28,16 +28,18 @@ countNumberInit t n num
  
 countNumber :: Tree -> Node -> Int -> Int -> Int
 countNumber t n num cnt
- | hasNextSibling t n && sizeLogspace t n == num = countNumber t (nextSibling t n) num (cnt+1)
- | hasNextSibling t n = countNumber t (nextSibling t n) num cnt
+ | hasNextSibling t n && sizeLogspace t next == num = countNumber t next num (cnt+1)
+ | hasNextSibling t n = countNumber t next num cnt
  | otherwise = cnt
+  where
+   next = nextSibling t n
  
 lexikoLess :: Tree -> Tree -> Node -> Node -> Int -> Int -> Bool
 lexikoLess t1 t2 n1 n2 numChilds act
  | numChilds == 0 = False
  | c1>c2 = True
  | c1<c2 = False
- | otherwise = lexikoLess t1 t2 n1 n1 (numChilds-c1) (act+1)
+ | otherwise = lexikoLess t1 t2 n1 n2 (numChilds-c1) (act+1)
    where
     c1 = countNumberInit t1 n1 act
     c2 = countNumberInit t2 n2 act

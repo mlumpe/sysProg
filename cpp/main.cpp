@@ -267,8 +267,6 @@ int main() {
     cout << lindell(t9,t10) << " -> 1" << endl;
     cout << "lindell(t10, t9)" << endl;
     cout << lindell(t10,t9) << " -> -1" << endl;
-    cout << "lindell(t11, t12)" << endl;
-    cout << lindell(t11,t12) << " 1 oder -1" << endl;
     
     return 0;
 }
