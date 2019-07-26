@@ -7,6 +7,7 @@ import Types
 import Mod_treeToString
 import Mod_sizeLogspace
 import Mod_nonRecursiveCheck
+--import Mod_tokenize
 
 --Tree t1
 t1 = newTree
@@ -123,4 +124,4 @@ main = do putStrLn ("*** Tests ***")
           putStrLn (show (nonRecursiveCheck t1 t1 (createNode 1) (createNode 1)))
           putStrLn ("nonRecursiveCheck(t3, t2, v5, v1)")
           putStrLn (show (nonRecursiveCheck t3 t2 (createNode 5) (createNode 1)))
-          
+          putStrLn (show (tokenize))

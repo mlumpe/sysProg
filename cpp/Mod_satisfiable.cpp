@@ -16,7 +16,7 @@ bool isVariable(String s) {
     
     for (int i = 0; i < length(lst) ; i++) {
         Char c = get(lst, i);
-        if(!((c >= 'A' && c <= 'Z') || (c >= 'a' && c <= 'z') || (c >= '0' && c <= '9'))) {
+        if(!((c >= 'a' && c <= 'z') || (c >= '0' && c <= '9'))) {
             variable = false;
         }
     }
