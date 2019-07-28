@@ -11,7 +11,14 @@ import Mod_satisfiable
 import Mod_treeToString
 
 --Code zum Testen der geschriebenen Funktionen
-input = "(((! a1) && 1 )-> (xyz || z))"
+input = "(((! 1) && 1 )-> (xyz || z))"
+--input = "(((!a1) && 1 )-> (xyz || z))"
+--input = "(((((!x1) || x2) || x3) && ((x2 || (!x3)) || x4)) && (x1 || (!x2)))"
+--input = "((a || (!a)) -> (a2 && (!a2)))" -- false
+--input = "((a || (!a)) -> ((a2 && (!a2)) || (a3 && a3)))" --true
+--input = "((a || (!a)) -> ((a2 && (!a2)) || (a3 && (!a3))))" --false
+--input = "(!(!(!(!(!1)))))" -- false
+
 tokens = tokenize input
 parsed = parse tokens
 evaled = eval parsed

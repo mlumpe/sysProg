@@ -49,7 +49,7 @@ int main() {
 
     cout << "satisfiable: " << (satisfiable(res) == 1 ? "true": "false") << endl << endl;
     
-    cout << "(!(!(!(!(!(!1))))))" << endl;
+    cout << "(!(!(!(!(!1)))))" << endl;
 	res = parse(tokenize("(!(!(!(!(!1)))))"));
     cout << treeToString(get21(res));
 	cout << get22(res) << endl;    
@@ -70,7 +70,7 @@ int main() {
     
     cout << "satisfiable: " << (satisfiable(res) == 1 ? "true": "false") << endl << endl;*/
     
-    cout << "((a || (!a)) -> 0)" << endl;
+    cout << "((a || (!a)) -> ((a2 && (!a2)) || (a3 && a3)))" << endl;
     res = parse(tokenize("((a || (!a)) -> ((a2 && (!a2)) || (a3 && a3)))"));
     cout << treeToString(get21(res));
     cout << get22(res) << endl;
