@@ -1,5 +1,6 @@
 #include "splib.cpp"
 #include "types.cpp"
+#include <assert.h>
 
 //Einbinden der selbst geschriebenen Programme
 #include "Mod_treeToString.cpp"
@@ -243,30 +244,42 @@ int main() {
     //Code zum Testen    
     cout << "*** Tests ***" << endl;
     cout << "sizeLogspace(t1, v1)" << endl;
-    cout << sizeLogspace(t1, createNode(1)) << endl;
+    assert(sizeLogspace(t1, createNode(1)) == 1);
     cout << "sizeLogspace(t2, v2)" << endl;
-    cout << sizeLogspace(t2, createNode(2)) << endl;
+    assert(sizeLogspace(t2, createNode(2)) == 6);
     cout << "sizeLogspace(t4, v3)" << endl;
-    cout << sizeLogspace(t4, createNode(3)) << endl;
+    assert(sizeLogspace(t4, v43) == 2);
+    cout << "sizeLogspace(t8, v1)" << endl;
+    assert(sizeLogspace(t8, v81) == 14);
+    
+    
     cout << "nonRecursiveCheck(t1, t1, v1, v1)" << endl;
-    cout << nonRecursiveCheck(t1, t1, createNode(1), createNode(1)) << endl;
+    assert(nonRecursiveCheck(t1,t1, createNode(1), createNode(1)) == false);
     cout << "nonRecursiveCheck(t3, t2, v5, v1)" << endl;
-    cout << nonRecursiveCheck(t3, t2, createNode(5), createNode(1)) << endl;
+    assert(nonRecursiveCheck(t3,t2, createNode(5), createNode(1)) == true);
     cout << "nonRecursiveCheck(t11, t12, v1, v1)" << endl;
-    //cout << nonRecursiveCheck(t11, t12, root(t11), root(t12)) << endl;
-    /**cout << "nonRecursiveCheck(t11, t12, v2, v2)" << endl;
-    cout << nonRecursiveCheck(t11, t12, createNode(2), createNode(2)) << endl;
+    assert(nonRecursiveCheck(t11, t12, root(t11), root(t12)) == false);
+    cout << "nonRecursiveCheck(t11, t12, v2, v2)" << endl;
+    assert(nonRecursiveCheck(t11, t12, createNode(2), createNode(2)) == false);
     cout << "nonRecursiveCheck(t11, t12, v10, v10)" << endl;
-    cout << nonRecursiveCheck(t11, t12, createNode(10), createNode(10)) << endl;
+    assert(nonRecursiveCheck(t11, t12, createNode(10), createNode(10)) == false);
     cout << "nonRecursiveCheck(t11, t12, v4, v4)" << endl;
-    cout << nonRecursiveCheck(t11, t12, createNode(4), createNode(4)) << endl;*/
+    assert(nonRecursiveCheck(t11, t12, createNode(4), createNode(4)) == true);
 	
     cout << "lindell(t7, t8)" << endl;
-    cout << lindell(t7,t8) << " -> 0" << endl;
+    assert(lindell(t7,t8) == 0);
     cout << "lindell(t9, t10)" << endl;
-    cout << lindell(t9,t10) << " -> 1" << endl;
+    assert(lindell(t9,t10) == 1);
     cout << "lindell(t10, t9)" << endl;
-    cout << lindell(t10,t9) << " -> -1" << endl;
+    assert(lindell(t10,t9) == -1);
+    cout << "lindell(t1, t2)" << endl;
+    assert(lindell(t1,t2) == -1);
+    cout << "lindell(t2, t1)" << endl;
+    assert(lindell(t2,t1) == 1);
+    cout << "lindell(t4, t5)" << endl;
+    assert(lindell(t4,t5) == 1);
+    cout << "lindell(t2, t6)" << endl;
+    assert(lindell(t2,t6) == 0);
     
     return 0;
 }
