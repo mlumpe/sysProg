@@ -16,6 +16,7 @@ tokens = tokenize input
 parsed = parse tokens
 evaled = eval parsed
 satisfiabled = satisfiable parsed
+res = parse (tokenize (input) )
 
 main = do putStrLn ("*** Tests Tokenize ***")
           putStrLn ("tokenize((((! a1) && 1 )-> (xyz || z)))")
@@ -23,13 +24,12 @@ main = do putStrLn ("*** Tests Tokenize ***")
           putStrLn ("tokenize(((abc && 0) -> x))")
           putStrLn (show ( tokenize "((abc && 0) -> x)" ))
           putStrLn ("")
-          {-putStrLn ("*** Tests Parse & Eval & Satisfiable ***")
-          putStrLn ("((abc && 0) -> x)")
-          res = parse (tokenize ("((abc && 0) -> x)") )
+          putStrLn ("*** Tests Parse & Eval & Satisfiable ***")
+          putStrLn (show (input))
           putStrLn (treeToString (get21 (res)))
-          putStrLn (get22 (res))
+          putStrLn (show (get22 (res)))
           putStrLn ("Eval Tree & Map")
-          --putStrLn (treeToString (get21 (eval (res))))    --eval
-          --putStrLn (get22 (eval (res)))                   --eval
-          --putStrLn ("Satisfiable: " ++ satisfiable (res)) --satisfiable
-          putStrLn ("")-}
+          putStrLn (treeToString (get21 (eval (res))))
+          putStrLn (show (get22 (eval (res))))
+          putStrLn ("Satisfiable: " ++ show (satisfiable (res))) --satisfiable
+          putStrLn ("")
