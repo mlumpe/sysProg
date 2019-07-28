@@ -17,11 +17,19 @@ parsed = parse tokens
 evaled = eval parsed
 satisfiabled = satisfiable parsed
 
-main = do putStrLn ("*** Tests ***")
-          putStrLn ("tokenize((((! a1) && 1 )-> (xyz || z))")
-          putStrLn (show tokens)
-          putStrLn (treeToString (get21 parsed))
-          putStrLn (show (get22 parsed))
-          putStrLn (treeToString (get21 evaled))
-          putStrLn (show (get22 evaled))
-          putStrLn (show satisfiabled)
+main = do putStrLn ("*** Tests Tokenize ***")
+          putStrLn ("tokenize((((! a1) && 1 )-> (xyz || z)))")
+          putStrLn (show (tokenize "(((! a1) && 1 )-> (xyz || z))" ))
+          putStrLn ("tokenize(((abc && 0) -> x))")
+          putStrLn (show ( tokenize "((abc && 0) -> x)" ))
+          putStrLn ("")
+          {-putStrLn ("*** Tests Parse & Eval & Satisfiable ***")
+          putStrLn ("((abc && 0) -> x)")
+          res = parse (tokenize ("((abc && 0) -> x)") )
+          putStrLn (treeToString (get21 (res)))
+          putStrLn (get22 (res))
+          putStrLn ("Eval Tree & Map")
+          --putStrLn (treeToString (get21 (eval (res))))    --eval
+          --putStrLn (get22 (eval (res)))                   --eval
+          --putStrLn ("Satisfiable: " ++ satisfiable (res)) --satisfiable
+          putStrLn ("")-}
