@@ -49,8 +49,17 @@ bool satisfiable(Tuple2<Tree, Map<Node, String>> f) {
     } else {
         String strue = "TRUE";
         String sflase = "FALSE";
-        Map<Node, String> map1 = setImage(map, first(variables), strue);
-        Map<Node, String> map2 = setImage(map, first(variables), sflase);
+        String variableName = imageOf(map, first(variables));
+        Map<Node, String> map1 = map;
+        Map<Node, String> map2 = map;
+        
+        for (Node n : domainOf(map)) {
+            if((imageOf(map, n)) == variableName) {
+                map1 = setImage(map1, n, strue);
+                map2 = setImage(map2, n, sflase);
+            }
+        }
+
         
         bool b1 = satisfiable(set22(f, map1));
         bool b2 = satisfiable(set22(f, map2));

@@ -59,9 +59,8 @@ int main() {
     
     cout << "satisfiable: " << (satisfiable(res) == 1 ? "true": "false") << endl << endl;
     
-    /*
     // 3-SAT Bespiel mit erfüllbarer Fromel
-    cout << "(((((!x1) || x2) || x3) && ((x2 || (!x3)) || x4)) && (x1 || (!x2)))" << endl;
+    /*cout << "(((((!x1) || x2) || x3) && ((x2 || (!x3)) || x4)) && (x1 || (!x2)))" << endl;
     res = parse(tokenize("(((((!x1) || x2) || x3) && ((x2 || (!x3)) || x4)) && (x1 || (!x2)))"));
     cout << treeToString(get21(res));
     cout << get22(res) << endl;
@@ -69,8 +68,17 @@ int main() {
     cout << "Eval Tree & Map:" << endl << treeToString(get21(eval(res)));
     cout << get22(eval(res)) << endl;
     
+    cout << "satisfiable: " << (satisfiable(res) == 1 ? "true": "false") << endl << endl;*/
+    
+    cout << "((a || (!a)) -> 0)" << endl;
+    res = parse(tokenize("((a || (!a)) -> ((a2 && (!a2)) || (a3 && a3)))"));
+    cout << treeToString(get21(res));
+    cout << get22(res) << endl;
+    
+    cout << "Eval Tree & Map:" << endl << treeToString(get21(eval(res)));
+    cout << get22(eval(res)) << endl;
+    
     cout << "satisfiable: " << (satisfiable(res) == 1 ? "true": "false") << endl << endl;
-    */
 
     return 0;
 }
