@@ -25,21 +25,11 @@ main = do putStrLn ("*** Tests Tokenize ***")
           putStrLn (show (tokenize "((abc && 0) -> x)" ))
           putStrLn ("")
           putStrLn ("*** Tests Parse & Eval & Satisfiable ***")
-<<<<<<< Updated upstream
           putStrLn (show (input))
-=======
-          putStrLn ("((abc && 0) -> x)")
-          res = parse (tokenize ("((abc && 0) -> x)") )
->>>>>>> Stashed changes
           putStrLn (treeToString (get21 (res)))
           putStrLn (show (get22 (res)))
           putStrLn ("Eval Tree & Map")
           putStrLn (treeToString (get21 (eval (res))))
-<<<<<<< Updated upstream
           putStrLn (show (get22 (eval (res))))
           putStrLn ("Satisfiable: " ++ show (satisfiable (res))) --satisfiable
-=======
-          putStrLn (get22 (eval (res)))
-          putStrLn ("Satisfiable: " ++ show (satisfiable (res)))
->>>>>>> Stashed changes
           putStrLn ("")

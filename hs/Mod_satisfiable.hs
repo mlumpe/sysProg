@@ -24,9 +24,18 @@ satisfiable ast
   evaled = eval ast
   resTree = get21 evaled
   resMap = get22 evaled
-  map1 = setImage mapParam (first variables) "TRUE"
-  map2 = setImage mapParam (first variables) "FALSE"
+  varname = imageOf mapParam (first variables)
+  map1 = setAllVariables varname mapParam (domainOf mapParam) "TRUE" 0
+  map2 = setAllVariables varname mapParam (domainOf mapParam) "FALSE" 0
   b1 = satisfiable (set22 ast map1)
   b2 = satisfiable (set22 ast map2)
   variables = getVariablesPos mapParam (domainOf mapParam) 0 []
   mapParam = get22 ast
+
+setAllVariables :: String -> (Map Node String) -> [Node] -> String -> Int -> (Map Node String)
+setAllVariables name mapParam domain newV i
+ | i == length domain = mapParam
+ | imageOf mapParam n == name = setAllVariables name (setImage mapParam n newV) domain newV (i+1)
+ | otherwise = setAllVariables name mapParam domain newV (i+1)
+  where
+   n = get domain i
