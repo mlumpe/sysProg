@@ -55,7 +55,7 @@ bool satisfiable(Tuple2<Tree, Map<Node, String>> f) {
         bool b1 = satisfiable(set22(f, map1));
         bool b2 = satisfiable(set22(f, map2));
 
-        cout << imageOf(map, first(variables)) << ";" << b1 << ";" << b2 << ";" << endl;
+        //cout << imageOf(map, first(variables)) << ";" << b1 << ";" << b2 << ";" << endl;
         
         return satisfiable(set22(f, map1)) || satisfiable(set22(f, map2));
     }
